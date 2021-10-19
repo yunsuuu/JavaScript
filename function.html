@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+    <h1>Function</h1>
+    <h2>Basic</h2>
+    <ul>
+        <script>
+            function two() {
+                document.write('<li>2-1</li>');
+                document.write('<li>2-2</li>');
+            }
+            // two 라는 함수를 만들었고, {}안의 코드들을 반복하는 거구나
+            document.write('<li>1</li>');
+            two();
+            // two(); 자리 자체에 아래 태그들이 있다고 생각 -> 함수 two 안에 있는 태그들을 출력해라
+            // document.write('<li>2-1</li>');
+            // document.write('<li>2-2</li>');
+            // 괄호 닫힌 걸 보고 컴퓨터가 해석->two는 함수 이름이었고, 이 함수를 실행하고 싶구나
+            document.write('<li>3</li>');
+            two();
+        </script>
+    </ul>
+
+    <h2>Parameter & Argument - 입력</h2>
+    <script>
+        function onePlusOne(){
+            document.write(1+1+'<br>'); //2
+        }
+        onePlusOne();
+        
+        function sum(left, right){ 
+            //sum() 안에 든 영어 = 매개변수(파라미터)
+            //아래 sum(2,3)(3,4) -> left, right로 치환
+            document.write(left+right+'<br>');
+        }
+
+        //위의 함수로 인해 아래처럼 코드를 적으면 답이 바로 출력됨 - left, right 더해주고, <br>로 한줄 띄어주고, 값 출력까지
+        sum(2,3); //5
+        sum(3,4); //7
+        sum(10, 7);
+        // sum() 안에 든 숫자 = argument 인자
+        </script>
+
+    <h2>Return - 출력</h2>
+    <script>
+        function sum2(left, right){
+            return left+right;
+        }
+
+        document.write(sum2(2,3)+'<br>'); 
+        document.write('<div style="color:red">'+sum2(2,3)+'</div>'); 
+        document.write('<div style="font-size:3rem">'+sum2(2,3)+'</div>');
+        // left, right라는 매개변수를 활용하여 데이터값이 변하는 거에 따라 다양한 결과를 출력할 수 있음 상당히 효율적
+    </script>
+
+
+</body>
+
+</html>

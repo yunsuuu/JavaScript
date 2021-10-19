@@ -5,49 +5,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>java1</title>
+    <title>WEB1 - Welcome</title>
+
+    <script>
+        var Links = {
+            setColor: function (color) {
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+            }
+        }
+        // if, else 안에 있는 color 변경하는 태그 중복되니까 함수 활용해서 축약
+        var Body = {
+            setColor: function (color) {
+                document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor: function (color) {
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+        function nightDayHandler(self) {
+            var target = document.querySelector('body');
+            // target = body
+            if (self.value === 'night') {
+                Body.setBackgroundColor('black');
+                Body.setColor('white');
+                self.value = 'day';
+
+                Links.setColor('pink');
+            } else {
+                Body.setBackgroundColor('white');
+                Body.setColor('black');
+                self.value = 'night';
+
+                Links.setColor('blue');
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <script>
-        // 데이터 출력할 때 document.write 사용
-        document.write('hello world');
-    </script>
-    <input type="button" value="hi" onclick="alert('hi')">
-    </input>
-    <input type="text" onchange="alert('changed')">
-    <input type="text" onkeydown="alert('key down!')">
-
-
-
     <h1><a href="#">WEB</a></h1>
-
-    <input //id="night_day2" type="button" value="night"
-    onclick="
-    var target = document.querySelector('body');
-    // target = body
-
-    if(this.value === 'night')
-    {
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    this.value = 'day';
-    } else {
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    this.value = 'night';
-    }
-    ">
-
-
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+        ">
     <ol>
-        <li><a href=" #">HTML</a></li>
-        <li><a href="#">CSS</a></li>
-        <li><a href="#">JavaScript</a></li>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
     </ol>
     <h2>JavaScript</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum inventore quasi reiciendis, voluptate dolore, modi
-        veniam soluta quia, temporibus itaque vero sapiente fuga voluptas possimus in cupiditate maxime dolor. Animi?
+    veniam soluta quia, temporibus itaque vero sapiente fuga voluptas possimus in cupiditate maxime dolor. Animi?
     </p>
 </body>
 
